@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="public/stylesheets/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="category.html">Tüm Kategoriler</a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="results" class="json-library"></div>
+    <h1 class="categoryTitle">
+        <!--CATEGORY TITLE -->
+    </h1>
+    <div class="movie-container">
+
+    </div>
+    <div id="err"></div>
+    <button onclick="sil()">Sil</button>
+</body>
+<script>
+    // var parsedUrl = new URL(window.location.href);
+    // console.log(parsedUrl.searchParams);
+    // //console.log(parsedUrl.searchParams.get("id")); // 123
+
+    // // var path = window.location.pathname.split('/');
+    // const serachUrl = window.location.search.split('?')[1];
+    // const movieDetailHtml = (data) => {
+    //     //title
+    //     const categoryTitle = document.getElementsByClassName('categoryTitle');
+    //     const dataTitle = document.createTextNode(data[0].category_name);
+    //     categoryTitle[0].appendChild(dataTitle);
+    //     //movie
+    //     console.log(data);
+    //     const movie = data[0].movie;
+    //     const movieContainer = document.getElementsByClassName('movie-container');
+    //     let html = new String;
+    //     for (let i = 0; i < movie.length; i++) {
+    //            html += `<div class="movieBox">
+    //                         <div class="imgBox">
+    //                             <img src="http://localhost:3000/uploads/${movie[i].movie_img}" width="150">
+    //                         </div>
+    //                         <div class="videoBox">
+    //                             <video width="400" controls>
+    //                                 <source src="http://localhost:3000/uploads/${movie[i].movie_video}" type="video/mp4">
+    //                             </video>
+    //                         </div>
+    //                         <div class="movieName">
+    //                             <span><b>Video Adı: </b></span>
+    //                             <span>${movie[i].movie_name}</span>
+    //                         </div>
+    //                         <div class="director">
+    //                             <span><b>Yönetmen : </b></span>
+    //                             <span>${movie[i].director}</span>
+    //                         </div>
+    //                         <div class="movieYear">
+    //                             <span><b>Tarihi : </b></span>
+    //                             <span>${movie[i].movie_year}</span>
+    //                         </div>
+    //                     </div>`;
+    //     }
+    //     movieContainer[0].innerHTML = html;
+    // }
+
+    // fetch(`http://localhost:3000/category/${serachUrl}`, {
+    //     method: 'GET', // or 'PUT'
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //     }
+    // }).then((response) => {
+    //     return response.json();
+    // }).then((data) => {
+    //     return movieDetailHtml(data);
+    // }).catch((err) => {
+    //     document.getElementById('err').innerHTML = `menü gelmedi ${err.message} `;
+    // });
+
+
+</script>
+<script src="./api.js"></script>
+<script>
+    //URL İ SEÇTİK
+    const serachUrl = window.location.search.split('?')[1];
+    
+    //Create movie html
+    const movieDetailHtml = (data) => {
+        //title
+        const categoryTitle = document.getElementsByClassName('categoryTitle');
+        const dataTitle = document.createTextNode(data[0].category_name);
+        categoryTitle[0].appendChild(dataTitle);
+        //movie
+        console.log(data);
+        
+        movie = data[0].movie;
+        const movieContainer = document.getElementsByClassName('movie-container');
+        let html = new String;
+        for (let i = 0; i < movie.length; i++) {
+               html += `<div class="movieBox">
+                            <div class="imgBox">
+                                <img src="http://localhost:3000/uploads/${movie[i].movie_img}" width="150">
+                            </div>
+                            <div class="videoBox">
+                                <video width="400" controls>
+                                    <source src="http://localhost:3000/uploads/${movie[i].movie_video}" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="movieName">
+                                <span><b>Video Adı: </b></span>
+                                <span>${movie[i].movie_name}</span>
+                            </div>
+                            <div class="director">
+                                <span><b>Yönetmen : </b></span>
+                                <span>${movie[i].director}</span>
+                            </div>
+                            <div class="movieYear">
+                                <span><b>Tarihi : </b></span>
+                                <span>${movie[i].movie_year}</span>
+                            </div>
+                            <form action="" method='delete'>
+                                <button type="submit">Sil gitsin</button>
+                            </form>
+                        </div>`;
+        }
+        movieContainer[0].innerHTML = html;
+    }
+    //Api
+    
+    call('GET', `http://localhost:3000/category/${serachUrl}`)
+        .then((data) => {
+            return movieDetailHtml(data);
+        }).catch((err) => {
+            document.getElementById('err').innerHTML = `menü gelmedi ${err.message} `;
+        });
+    function sil() {
+        console.log(movie);
+        fetch(`http://localhost:3000/movie/${movie[0]._id}`, {
+            method : 'DELETE',
+            headers:{
+                'Content-Type': 'application/json',
+                }
+        }).then((data) =>{
+            resolve (data.json());
+        }).catch((err) => {
+            resolve (err)
+        })
+    }
+    
+</script>
+
+</html>

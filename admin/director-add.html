@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Director Add</title>
+    <link rel="stylesheet" href="../public/stylesheets/style.css">
+    <script src="https://npmcdn.com/babel-transform-in-browser@6.4.6/dist/btib.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <nav class="category">
+            <ul></ul>
+        </nav>
+    </header>
+    <!-- MAIN -->
+    <main>
+        <div class="director-form col-md-6">
+            <h2>Yönetmen Giriniz</h2>
+            <div id="errMessage"></div>
+            <ul>
+                <li>
+                    <label>Ad</label>
+                    <input type="text" id="director-name">
+                </li>
+                <li>
+                    <label>Soyad</label>
+                    <input type="text" id="director-surname">
+                </li>
+                <li>
+                    <label>Yaş</label>
+                    <input type="date" id="director-age">
+                </li>
+                <li>
+                    <label>Puanı</label>
+                    <input type="number" step="0.1" id="director-rate">
+                </li>
+                <li>
+                    <label>Biografi</label>
+                    <textarea id="director-biography" cols="30" rows="10"></textarea>
+                </li>
+            </ul>
+            <button type="submit" class="director-save">Kaydet</button>
+        </div>
+
+        <div class="director-form-list col-md-6">
+            <h2>Yönetmen Düzenle</h2>
+
+            <ul>
+                
+            </ul>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+
+    </footer>
+</body>
+<script src="../public/javascripts/api.js"></script>
+
+</html>

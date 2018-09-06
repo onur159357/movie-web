@@ -11,11 +11,11 @@ body * {
   /* Firefox 28 and earlier*/
 }
 
-.clearfix:before, .category > ul:before, main:before {
+.clearfix:before, .category > ul:before {
   clear: both;
 }
 
-.clearfix:before, .category > ul:before, main:before, .clearfix:after, .category > ul:after, main:after {
+.clearfix:before, .category > ul:before, .clearfix:after, .category > ul:after {
   content: " ";
   visibility: hidden;
   display: block;
@@ -108,68 +108,4 @@ label {
 
 .category > ul li:hover > a {
   color: red;
-}
-
-main .col-md-6 {
-  width: 45%;
-  float: left;
-}
-
-main .col-md-3 {
-  width: 25%;
-  float: left;
-  padding: 10px;
-}
-
-main .col-md-9 {
-  width: 75%;
-  float: left;
-  padding: 10px;
-}
-
-main .director-form-list > ul {
-  display: table;
-}
-
-main .director-form-list > ul > li {
-  display: table-row;
-}
-
-main .director-form-list > ul > li > div {
-  display: table-cell;
-  padding: 10px;
-}
-
-main .director-form-list > ul > li > section {
-  position: relative;
-  display: none;
-}
-
-main .director-form-list > ul > li > section > ul {
-  padding: 15px;
-  position: absolute;
-  top: -50%;
-  right: 0px;
-  background-color: #fff;
-  border: 1px solid #000000;
-}
-
-main .movie-box {
-  width: 25%;
-  float: left;
-  padding: 10px;
-}
-
-main .movie-box .movie-img img,
-main .movie-box .movie-video img {
-  width: 100%;
-}
-
-main .movie-box .movie-img video,
-main .movie-box .movie-video video {
-  width: 100%;
-}
-
-main .movie-form > ul > li {
-  padding-bottom: 10px;
 }

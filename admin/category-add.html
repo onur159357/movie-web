@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../public/stylesheets/style.css">
+    <title>Kategori ekle</title>
+    <script src="https://npmcdn.com/babel-transform-in-browser@6.4.6/dist/btib.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <nav class="category">
+            <ul></ul>
+        </nav>
+    </header>
+    <!-- MAIN -->
+    <main>
+        <div class="cat-form col-md-6">
+            <h2>Kategori giriniz</h2>
+            <div id="errMessage"></div>
+            <ul>
+                <li>
+                    <label>üst kategori ve düzenlemek veya silmek istediğiniz kategoriyi seçin</label>
+                    <select id="category"></select>
+                </li>
+                <li>
+                    <label>Kategori adı</label>
+                    <input type="text" id="category-name">
+                </li>
+                <li>
+                    <label>Açıklama</label>
+                    <textarea id="category-description" cols="30" rows="10"></textarea>
+                </li>
+                <li>
+                    <button class="delete-cat-btn">Kategoriyi sil</button>
+                    <button class="save-cat-btn">Kaydet</button>
+                </li>
+            </ul>
+        </div>
+
+        <div class="cat-form-edit col-md-6">
+            <h2>Kategori düzenle</h2>
+            <ul>
+                <li>
+                    <label>üst kategori seçin</label>
+                    <select id="category-edit"></select>
+                </li>
+                <li>
+                    <label>Kategori adı</label>
+                    <input type="text" id="category-name-edit" placeholder="">
+                </li>
+                <li>
+                    <label>Açıklama</label>
+                    <textarea id="category-description-edit" cols="30" rows="10" placeholder=""></textarea>
+                </li>
+                <li>
+                    <button class="edit-cat-btn">Değişiklikleri Kaydet</button>
+                </li>
+            </ul>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+
+    </footer>
+</body>
+<script src="../public/javascripts/api.js"></script>
+
+</html>

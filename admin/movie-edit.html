@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>movie Add</title>
+    <link rel="stylesheet" href="../public/stylesheets/style.css">
+    <script src="https://npmcdn.com/babel-transform-in-browser@6.4.6/dist/btib.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <nav class="category">
+            <ul></ul>
+        </nav>
+    </header>
+    <!-- MAIN -->
+    <main>
+        <div class="movie-form">
+            <div id="errMessage"></div>
+            <ul>
+                <li>
+                    <label for="director">YÖNETMEN *</label>
+                    <select id="director"></select>
+                </li>
+                <li>
+                    <label for="category">KATEGORİ *</label>
+                    <select id="category"></select>
+                </li>
+                <li>
+                    <label for="movie-name">VİDEO ADI*</label>
+                    <input type="text" id="movie-name">
+                </li>
+                <li>
+                    <label for="movie-img">VİDEO RESİM *</label>
+                    <div class="img-content">
+                        <img id="img-content" width="200">
+                    </div>
+                    <input type="file" id="movie-img" multiple>
+                </li>
+                <li>
+                    <label for="movie-video">VİDEO</label>
+                    <div id="video-content"></div>
+                    <input type="file" id="movie-video">
+                </li>
+                <li>
+                    <label for="movie-country">ÜLKE</label>
+                    <input type="text" id="movie-country">
+                </li>
+                <li>
+                    <label for="movie-year">YIL</label>
+                    <input type="date" id="movie-year">
+                </li>
+                <li>
+                    <label for="imdb-score">IMDB PUANI</label>
+                    <input type="number" step="0,1" id="imdb-score">
+                </li>
+                <li>
+                    <button type="submit" id="edit-save-video">Kaydet</button>
+                    <button type="submit" id="edit-close-video">Çıkış</button>
+                </li>
+            </ul>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+
+    </footer>
+</body>
+<script src="../public/javascripts/api.js"></script>
+
+</html>

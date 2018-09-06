@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./public/stylesheets/style.css">
+    <title>Kategori ekle</title>
+    <script src="https://npmcdn.com/babel-transform-in-browser@6.4.6/dist/btib.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+     
+    <h3>Katagoriler</h3>
+    <nav class="category">
+        <ul></ul>
+    </nav>
+    <div id="errMessage"></div>
+    <div class="categorySelect">
+        <label for="category">Hangi Kategorinin Alt Kategorisi olsun</label>
+        <select name="category" id="category">
+            <option value="0">Ana Kategori</option>
+        </select>
+        <button class="deleteCatBtn">Kategoriyi sil</button>
+    </div>
+
+    <div class="category-name">
+        <label for="category">Kategori adı</label>
+        <input type="text" name="category_name" id="category_name">
+    </div>
+
+    <div class="category_description">
+        <label for="category_description">Açıklama</label>
+        <textarea name="category_description" id="category_description" cols="30" rows="10"></textarea>
+    </div>
+    <button class="saveCatBtn">Kaydet</button>
+    <button class="editCatBtn">Değişiklikleri Kaydet</button>
+    <h3>Videolar</h3>
+    <div class="movie-container clearfix"></div>
+</body>
+<script src="./public/javascripts/api.js"></script>
+
+</html>
